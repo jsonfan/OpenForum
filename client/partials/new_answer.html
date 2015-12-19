@@ -1,0 +1,12 @@
+<a href="#/logout">logout</a>
+<div ng-controller='newAnswerController'>
+  <!-- {{currentUser.name}} -->
+
+  <h1><span ng-bind='currentQuestion.question'></span></h1>
+  <h4><span ng-bind='currentQuestion.description'></span></h4>
+  <form ng-submit='createAnswer(newAnswer, currentQuestion._id)'>
+    <label>Your answer: <textarea ng-model='newAnswer.message'></textarea></label>
+    <label>Supporting details for your answer (optional): <textarea ng-model='newAnswer.details'></textarea></label>
+    <input type="submit">
+  </form>
+</div>

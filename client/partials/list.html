@@ -1,0 +1,40 @@
+<div ng-controller='mainController'>
+   <h2>Welcome <span ng-bind='currentUser.name'></span>!</h2>
+   <button ng-click='logout()'>LOGOUT</button>
+   <ul>
+     <li ng-repeat="user in users">
+       <span ng-bind="user.name"></span>, registered:
+      <span ng-bind="user.created_at | date"></span></li>
+   </ul>
+   <hr>
+   <form ng-submit='createPost(newPost)'>
+     <label>Post a message: <textarea ng-model='newPost.message'></textarea></label>
+     <button>Post a message</button>
+   </form>
+   <hr>
+   <!-- what one message looks like -->
+   <div ng-repeat="post in posts | orderBy: '-created_at'">
+     <strong><span ng-bind='post.user.name'></span> said at
+       <span ng-bind="post.created_at | date"></span>: </strong>
+      <p><span ng-bind="post.message"</p>
+
+        <!-- here is where i want to put the comments -->
+      <div style='margin-left: 20px' ng-repeat="comment in post.comments">
+        <form ng-submit='likeComment(comment, post)'>
+          <span ng-bind='comment.likes'></span><button>Like(s)</button>
+        </form>
+        <form ng-submit='dislikeComment(comment, post)'>
+          <span ng-bind='comment.dislikes'></span><button>Dislike(s)</button>
+        </form>
+        <strong><span ng-bind="comment.user.name"></span> said at <span ng-bind="comment.created_at | date"></span>:</strong>
+        <p ng-bind='comment.message'></p>
+        ---------
+      </div>
+      <form ng-submit='createComment(newComment, post._id)'>
+        <label>Comment on this post: <textarea ng-model='newComment.message'></textarea></label>
+        <button>Comment</button>
+      </form>
+      <hr>
+
+   </div>
+</div>

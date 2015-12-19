@@ -1,0 +1,15 @@
+<a href="#/logout">logout</a>
+<div ng-controller='questionController'>
+  <!-- {{currentUser.name}} -->
+
+  <h1><span ng-bind='currentQuestion.question'></span></h1>
+  <h4><span ng-bind='currentQuestion.description'></span></h4>
+  <ul>
+    <li ng-repeat='answer in currentQuestion.answers'>
+      <p><span ng-bind='answer.user'></span> :</p>
+      <strong><span ng-bind='answer.message'></span></strong>
+      <p><span ng-bind='answer.details'></span></p>
+      <span ng-bind='answer.likes'></span> likes <button ng-click='likeAnswer(answer, currentQuestion)'>Like!</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+<a href="#/logout">logout</a>
+<div ng-controller='newQuestionController'>
+  <!-- {{currentUser.name}} -->
+
+  <h1>New Question</h1>
+  <form ng-submit='createQuestion(newQuestion)'>
+    <div ng-show='error'><span ng-bind='error.errors.question.message'></span></div>
+     <label>Question: <textarea ng-model='newQuestion.question' required></textarea></label>
+     <label>Description (optional): <textarea ng-model='newQuestion.description'></textarea></label>
+     <button>Submit</button>
+   </form>
+  <button>Cancel</button>
+</div>
