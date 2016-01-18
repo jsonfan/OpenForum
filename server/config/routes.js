@@ -1,5 +1,3 @@
-// var users = require('../controllers/users');
-// var posts = require('../controllers/posts');
 var questions = require('../controllers/questions');
 module.exports = function(app) {
   app.post('/questions', questions.createQuestion);
