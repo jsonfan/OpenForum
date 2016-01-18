@@ -2,8 +2,9 @@
   "name": "QAndA",
   "version": "0.0.1",
   "dependencies": {
+    "angular-material": "^1.0.2",
+    "body-parser": "latest",
     "express": "~4.2.0",
-    "mongoose": "latest",
-    "body-parser": "latest"
+    "mongoose": "latest"
   }
 }

@@ -1,12 +1,15 @@
 
-<a href="#/logout">logout</a>
-<div ng-controller='mainController'>
+<!-- <a href="#/logout">logout</a> -->
+<div ng-controller='mainController' class="container">
   <label>Search: </label><input type="text" ng-model='filter_name' placeholder='search'>
-  <table>
+  <table class="highlight">
     <thead>
       <tr>
         <td>
           Question
+        </td>
+        <td>
+          Author
         </td>
         <td>
           Answers
@@ -21,11 +24,14 @@
         <span ng-bind='question.question'></span>
       </td>
       <td>
+        <span ng-bind='question.author'></span>
+      </td>
+      <td>
         <span ng-bind='question.answer_count'></span>
       </td>
       <td>
-        <button ng-click='showQuestion(question)'>Show</button>
-        <button ng-click='newAnswer(question)'>Answer</button>
+        <button class="waves-effect waves-light btn" ng-click='showQuestion(question)'>Show</button>
+        <button class="waves-effect waves-light btn" ng-click='newAnswer(question)'>Answer</button>
       </td>
     </tr>
   </table>

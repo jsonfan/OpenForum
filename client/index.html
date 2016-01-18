@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html ng-app='meanDemo'>
   <head>
-    <title></title>
+    <title>Q & A</title>
+    <!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"> -->
     <!-- THESE TWO VERSIONS BELOW MUST MATCH!!!! -->
     <script src="https://code.angularjs.org/1.4.8/angular.js"></script>
     <script src="https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
     <script type="text/javascript">
       var Name = prompt('What is your name?');
       while(Name.length < 1 ){
@@ -16,6 +31,7 @@
       console.log(Name);
     </script>
     <script src='/js/app.js'></script>
+    <script src='/js/controllers/headerController.js'></script>
     <script src='/js/controllers/usersController.js'></script>
     <script src='/js/controllers/mainController.js'></script>
     <script src='/js/controllers/newQuestionController.js'></script>
@@ -25,7 +41,38 @@
     <script src='/js/factories/questionFactory.js'></script>
   </head>
   <body>
-      <a href="#/main">Home</a> | <a href="#/new_question">Add a Question</a> 
+      <!-- <div ng-controller="headerController"> -->
+        <!-- <md-toolbar>
+          <div class="md-toolbar-tools">
+            <span>Q & A</span>
+          </div>
+          <md-button>Home</md-button>
+          <md-button>Add a Question</md-button>
+        </md-toolbar>
+        <div layout="column">
+          <md-toolbar>
+            <md-button>Home</md-button>
+            <md-button>Add a Question</md-button>
+          </md-toolbar>
+          <md-content flex>
+            content
+          </md-content> -->
+        <!-- </div> -->
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper blue-grey darken-4">
+            <a class="brand-logo center"><i class="material-icons right">question_answer</i></a>
+            <ul class="left hide-on-med-and-down">
+              <li><a href="#/main">Home</a></li>
+              <li><a href="#/new_question">Add a Question</a></li>
+              <li><a href="#/logout">Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- </div> -->
+      <!-- <a href="#/main">Home</a> | <a href="#/new_question">Add a Question</a> -->
       <div ng-view="">
       </div>
   </body>

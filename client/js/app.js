@@ -1,4 +1,4 @@
-var meanDemo = angular.module('meanDemo', ['ngRoute'])
+var meanDemo = angular.module('meanDemo', ['ngRoute', 'ngMaterial'])
   .config(function($routeProvider){
     $routeProvider
     .when('/', {
