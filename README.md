@@ -12,8 +12,8 @@ mongo
 ### Installing
 
 ```
-npm install
-node server.js
+$ npm install
+$ node server.js
 ```
 ## Built With
 
