@@ -1,5 +1,5 @@
-# Q & A
-Q &amp; A Forum powered by MEAN stack
+# Open Forum
+Open Forum: powered by MEAN stack
 ## Getting Started
 
 ### Prerequisities
